@@ -1,0 +1,118 @@
+<!doctype html> 
+<html>
+
+<head>
+	<title>HORIZON</title> 
+
+	<meta name="viewport" content="width=device-width, initial-scale=10"> <!-- Here is where all the jquery and js filed are linked -->
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css" />
+	<script src="script.js"></script>
+	<link rel="Shortcut Icon" href="CSS/favicon.ico"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,800italic,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body> <!-- The body of the app starts here -->
+
+
+
+<div data-role="page" data-theme="e">
+	
+ 	<!-- This first big div is the html for the left panel, search and popular cities -->
+	<div data-role="panel" id="left-panel" data-theme="c">
+		<ul data-theme="c" data-role="listview">
+			<li data-icon="delete"><a href ="#" data-rel="close">Close</a></li>
+			<li data-role="list-divider" data-theme="e">Search for City</li>
+
+
+			<form id="searchform">
+    			<div data-role="fieldcontain" align ="center">
+     				<input name="searchfield" type="search" class="searchbox" data-mini="true" value="">
+    			</div>
+			</form>
+
+
+			<li data-role="list-divider" data-theme="e">Popular Cities</li>
+			<li><a href="#" class="city" data-rel="close">Paris</a></li>
+			<li><a href="#" class="city" data-rel="close">Tokyo</a></li>
+			<li><a href="#" class="city" data-rel="close">New York</a></li>
+			<li><a href="#" class="city" data-rel="close">Dubai</a></li>
+			<li><a href="#" class="city" data-rel="close">Chicago</a></li>
+			<li><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+			<li><a href="#" class="city" data-rel="close">London</a></li>
+		</ul>
+	</div>
+
+	<!-- This second big div is the right panel where you get your weekly forecast -->
+	<div data-role="panel" data-display="overlay" data-position="right" id="right-panel" data-theme="c">
+		<ul data-theme="c" data-role="listview">
+			<li data-icon="delete"><a href ="#" data-rel="close">Close</a></li>
+			<li data-role="list-divider" data-theme="e">Weekly Forecast</li>
+			<li><a href="#p2" id="2" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p3" id="3" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p4" id="4" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p5" id="5" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p6" id="6" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p7" id="7" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<li><a href="#p8" id="8" data-role="button" data-transition="turn" data-inline="true" data-rel="popup" data-position-to="origin" data-theme="c"></a></li>
+			<div data-role="popup" id="p2" class="ui-content" data-theme="e">
+    			<p id="t2" class="icon" data-icon=""></p>
+    			<p id="day2"></p>
+			</div>
+			<div data-role="popup" id="p3" class="ui-content" data-theme="e">
+    			<p id="t3" class="icon" data-icon=""></p>
+    			<p id="day3"></p>
+			</div>
+			<div data-role="popup" id="p4" class="ui-content" data-theme="e">
+    			<p id="t4" class="icon" data-icon=""></p>
+    			<p id="day4"></p>
+			</div>
+			<div data-role="popup" id="p5" class="ui-content" data-theme="e">
+    			<p id="t5" class="icon" data-icon=""></p>
+    			<p id="day5"></p>
+			</div>
+			<div data-role="popup" id="p6" class="ui-content" data-theme="e">
+    			<p id="t6" class="icon" data-icon=""></p>
+    			<p id="day6"></p>
+			</div>
+			<div data-role="popup" id="p7" class="ui-content" data-theme="e">
+    			<p id="t7" class="icon" data-icon=""></p>
+    			<p id="day7"></p>
+			</div>
+			<div data-role="popup" id="p8" class="ui-content" data-theme="e">
+    			<p id="t8" class="icon" data-icon=""></p>
+    			<p id="day8"></p>
+			</div>
+		</ul>
+	</div>
+
+	<!-- This is the header for the website with the title -->
+	<div data-role="header" data-position="fixed" data-theme="c">
+		<h1>HORIZON</h1>
+		<a href= "#left-panel" data-role="button" data-icon="search" data-iconpos="notext" data-iconshadow="false">Menu</a>
+		<a href= "#right-panel" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-iconshadow="false">Menu</a>
+	</div>
+
+	<!-- This div contains the html tags that will display the current weather information -->
+	<div data-role="content" class="content" id="weathercontent">
+		<h1 id="location"></h1>
+		<p id="summary"></p>
+		<h2 id="temp" class="icon" data-icon=""></h2>
+		<p id="precip"></p>
+		<p id="wind"></p>
+		<p id="time"></p>
+		<p id="dailysum"></p>
+	</div>
+
+</div>
+
+</body>
+
+
+	
+
+
+</html>
